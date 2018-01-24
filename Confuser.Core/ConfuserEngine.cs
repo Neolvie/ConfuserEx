@@ -87,6 +87,7 @@ namespace Confuser.Core {
 			try {
 				var asmResolver = new AssemblyResolver();
 				asmResolver.EnableTypeDefCache = true;
+				asmResolver.FindExactMatch = true;
 				asmResolver.DefaultModuleContext = new ModuleContext(asmResolver);
 				context.Resolver = asmResolver;
 				context.BaseDirectory = Path.Combine(Environment.CurrentDirectory, parameters.Project.BaseDirectory.TrimEnd(Path.DirectorySeparatorChar) + Path.DirectorySeparatorChar);
